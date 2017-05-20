@@ -1,0 +1,5 @@
+{
+    "showInlineDocsOnHover": true, //Show inline documentation for built in functions on hover
+    "pathToPHPDocs":"Packages/CompletePHP/html/function.{{function}}.html",//PHP documentation, You can download a copy from http://php.net/get/php_manual_en.tar.gz/from/a/mirror
+    "php_path": "", // Path for PHP executable, e.g. "/usr/lib/php" or "C:/Program Files/PHP/php.exe". If empty, uses command "php" from system environments
+}

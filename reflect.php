@@ -26,7 +26,6 @@ if ($autoload) {
     }
     foreach (new AdvancedDirectoryIterator("-R *.php") as $i) {
         $path = $i->getPathname();
-        //if(stristr($path, "test")) continue;
         if (stristr($path, DIRECTORY_SEPARATOR . "composer")) {
             continue;
         }
@@ -63,7 +62,6 @@ foreach ($classes as $key => $class) {
     try {
         $return = null;
         $cmd = "php " .escapeshellarg( __DIR__ . "/reflector.php") ." " .escapeshellarg($autoloader) . " " . escapeshellarg($class);
-        //echo $cmd;
         exec($cmd, $return);
         $meths = json_decode(implode("\n", $return));
         if (!$meths) {
@@ -74,7 +72,6 @@ foreach ($classes as $key => $class) {
         foreach ($meths as $meth => $info) {
             if(!isset($out[$meth])) $out[$meth] = array();
             $out[$meth] = array_merge($out[$meth], $info);
-            //print_r($out[$meth]);
             # code...
         }
 
